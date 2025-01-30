@@ -1,0 +1,42 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 30-Jan-2025, 10:19:48 pm
+    Author     : Anshu
+*/
+
+/* Apply styles to the root AnchorPane */
+AnchorPane {
+    -fx-background-color: #dcdcdc;
+}
+
+/* Style for the HBox container */
+HBox {
+    -fx-spacing: 10px; /* Adds spacing between buttons */
+    -fx-alignment: center;
+    -fx-padding: 10px;
+    -fx-background-color: #b0b0b0;
+}
+
+/* Style for the buttons */
+Button {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: #808080;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+/* Button hover effect */
+Button:hover {
+    -fx-background-color: #606060;
+}
+
+/* Button pressed effect */
+Button:pressed {
+    -fx-background-color: #404040;
+}
