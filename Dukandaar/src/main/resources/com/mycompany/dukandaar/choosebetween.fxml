@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dukandaar.choosebetweencontroller">
+   <children>
+      <HBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#next" prefHeight="600.0" prefWidth="400.0" text="Retailer" />
+            <Button mnemonicParsing="false" onAction="#next2" prefHeight="600.0" prefWidth="400.0" text="Wholesaler" />
+         </children>
+      </HBox>
+   </children>
+    
+</AnchorPane>

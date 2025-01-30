@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@Mainpanel.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dukandaar.wholesalerpanelcontroller">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="100.0" styleClass="pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox prefHeight="600.0" prefWidth="138.0">
+         <children>
+            <Label fx:id="fullName" alignment="CENTER" prefHeight="59.0" prefWidth="100.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Full Name" textAlignment="CENTER" wrapText="true" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Inventory" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Analysis" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="ChatBot" />
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Profile" />
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Logout" />
+         </children>
+      </VBox>
+      <BorderPane fx:id="Canvas" layoutX="101.0" prefHeight="600.0" prefWidth="700.0" />
+   </children>
+</AnchorPane>

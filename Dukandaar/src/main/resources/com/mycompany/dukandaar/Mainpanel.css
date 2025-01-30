@@ -1,0 +1,87 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16-Sept-2024, 10:27:45 pm
+    Author     : Anshu
+*/
+.pane {
+    -fx-background-color: #ADD8E6; /* Light blue background */
+    -fx-border-color: #bdc3c7; /* Border color */
+    -fx-border-width: 2px; /* Border thickness */
+    -fx-border-radius: 8px; /* Rounded border corners */
+    -fx-padding: 10; /* Padding inside the pane */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 12, 0, 0, 4); /* Soft shadow for 3D effect */
+}
+
+/* Base button style with 3D effect */
+.button {
+    -fx-background-color: linear-gradient(#3498db, #2980b9); /* Gradient for 3D look */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 12px; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 5 ; /* Padding around text */
+    -fx-background-radius: 8; /* Rounded corners */
+    -fx-border-color: #2980b9; /* Border for 3D look */
+    -fx-border-width: 2px;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 10, 0, 0, 5); /* Drop shadow for depth */
+    -fx-cursor: hand; /* Pointer cursor on hover */
+}
+
+/* Button hover effect */
+.button:hover {
+    -fx-background-color: linear-gradient(#2980b9, #1f618d); /* Darker gradient on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.35), 12, 0, 0, 6); /* Slightly deeper shadow */
+}
+
+/* Button press effect (3D look pressed state) */
+.button:pressed {
+    -fx-background-color: linear-gradient(#1f618d, #145a86); /* Darker gradient on press */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 4, 0, 0, 2); /* Smaller shadow for pressed effect */
+    -fx-translate-y: 2px; /* Button moves down slightly when pressed */
+}
+
+/* Button focus effect (when selected or active) */
+.button:focused {
+    -fx-background-color: #5dade2; /* Lighter blue when focused */
+    -fx-border-color: #2980b9; /* Blue border on focus */
+    -fx-border-width: 2px;
+}
+
+/* Button disabled state */
+.button:disabled {
+    -fx-background-color: #bdc3c7; /* Gray when disabled */
+    -fx-text-fill: #7f8c8d; /* Lighter gray text */
+    -fx-effect: none; /* No shadow when disabled */
+}
+
+/* Special button styles */
+.success-button {
+    -fx-background-color: linear-gradient(#2ecc71, #27ae60); /* Green gradient */
+    -fx-border-color: #27ae60;
+}
+
+.success-button:hover {
+    -fx-background-color: linear-gradient(#27ae60, #1e8449);
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(#e74c3c, #c0392b); /* Red gradient */
+    -fx-border-color: #c0392b;
+}
+
+.danger-button:hover {
+    -fx-background-color: linear-gradient(#c0392b, #a93226);
+}
+
+.warning-button {
+    -fx-background-color: linear-gradient(#f1c40f, #f39c12); /* Yellow gradient */
+    -fx-text-fill: black;
+    -fx-border-color: #f39c12;
+}
+
+.warning-button:hover {
+    -fx-background-color: linear-gradient(#f39c12, #d68910);
+}

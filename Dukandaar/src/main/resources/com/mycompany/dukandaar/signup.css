@@ -1,0 +1,59 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 30-Jan-2025, 10:34:25 pm
+    Author     : Anshu
+*/
+
+/* General styles for the form */
+.root {
+    -fx-background-color: #F8F9FA;
+}
+
+/* Header label */
+.header-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Input fields style */
+.input-field {
+    -fx-pref-width: 300px;
+    -fx-padding: 10px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Action button styling (Next button) */
+.action-button {
+    -fx-pref-width: 300px;
+    -fx-padding: 12px;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #45a049;
+}
+
+/* Link button styling */
+.link-button {
+    -fx-text-fill: #1E88E5;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.link-button:hover {
+    -fx-text-fill: #1565C0;
+}
