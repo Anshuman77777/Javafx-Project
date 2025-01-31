@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -20,10 +21,16 @@ import javafx.stage.Stage;
 public class wholesalerpanelcontroller {
      Stage stage;
      @FXML
+     Label fullName;
+     
+     @FXML
    BorderPane Canvas;
-    void setStage(Stage stage)
+     @FXML
+   
+    void setStage(Stage stage,String Name)
     {
         this.stage=stage;
+        fullName.setText(Name);
         
     }
     @FXML
@@ -39,9 +46,52 @@ public class wholesalerpanelcontroller {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
     void analysis() throws IOException
     {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("wanalysis.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    @FXML
+    void chatbot() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("wchatbot.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    @FXML
+    void profile() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("wprofile.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    @FXML
+    void inventory() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("winventory.fxml"));
     
      Parent root=loader.load();
     // HomePageController hpc = loader.getController();
