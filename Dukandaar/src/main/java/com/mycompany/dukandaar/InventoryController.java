@@ -9,54 +9,57 @@ package com.mycompany.dukandaar;
  * @author Anshu
  */
 
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import java.util.HashMap;
+import com.mycompany.dukandaar.Item;
 
 public class InventoryController {
     @FXML
     private VBox stocksContainer;
-
-    private final HashMap<String, Integer> inventory = new HashMap<>();
-
+    @FXML
+    private TextField itemNameField, quantityField, priceField;
+    String user;
+    private  HashMap<String, Item> inventory;
+    void setUser(String user)
+    {this.user=user;
+    inventory=Auth.getWholesalerInventory(user);
+      updateDisplay();
+        
+    }
     public void initialize() {
-        // Sample data
-        inventory.put("Apples", 10);
-        inventory.put("Bananas", 5);
-        inventory.put("Oranges", 8);
-
-        updateDisplay();
+        // Sample items
+        
+       
+      
     }
 
     private void updateDisplay() {
         stocksContainer.getChildren().clear();
-
         for (String key : inventory.keySet()) {
-            int value = inventory.get(key);
-            HBox itemRow = createItemRow(key, value);
-            stocksContainer.getChildren().add(itemRow);
+            stocksContainer.getChildren().add(createItemRow(key, inventory.get(key)));
         }
     }
 
-    private HBox createItemRow(String key, int value) {
+    private HBox createItemRow(String key, Item item) {
         Label nameLabel = new Label(key);
-        Label valueLabel = new Label(String.valueOf(value));
+        Label valueLabel = new Label("Qty: " + item.getQuantity());
+        Label priceLabel = new Label("Price: $" + item.getPrice());
 
         Button plusButton = new Button("+");
         plusButton.setOnAction(e -> {
-            inventory.put(key, inventory.get(key) + 1);
+            item.setQuantity(item.getQuantity() + 1);
             updateDisplay();
         });
 
         Button minusButton = new Button("-");
         minusButton.setOnAction(e -> {
-            if (inventory.get(key) > 1) {
-                inventory.put(key, inventory.get(key) - 1);
+            if (item.getQuantity() > 1) {
+                item.setQuantity(item.getQuantity() - 1);
             } else {
                 inventory.remove(key);
             }
@@ -69,13 +72,57 @@ public class InventoryController {
             updateDisplay();
         });
 
-        HBox row = new HBox(10, nameLabel, valueLabel, plusButton, minusButton, deleteButton);
-        return row;
+        return new HBox(10, nameLabel, valueLabel, priceLabel, plusButton, minusButton, deleteButton);
+    }
+
+    @FXML
+    private void insertItem() {
+        String name = itemNameField.getText().trim();
+        String quantityText = quantityField.getText().trim();
+        String priceText = priceField.getText().trim();
+
+        // Validate input
+        if (name.isEmpty() || quantityText.isEmpty() || priceText.isEmpty()) {
+            System.out.println("Please fill all fields.");
+            return;
+        }
+
+        try {
+            int quantity = Integer.parseInt(quantityText);
+            double price = Double.parseDouble(priceText);
+
+            if (quantity <= 0 || price <= 0) {
+                System.out.println("Quantity and Price must be positive.");
+                return;
+            }
+
+            // Insert or update item
+            inventory.put(name, inventory.getOrDefault(name, new Item(0, price)));
+            inventory.get(name).setQuantity(inventory.get(name).getQuantity() + quantity);
+
+            updateDisplay();
+            clearInputFields();
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format.");
+        }
+    }
+
+    private void clearInputFields() {
+        itemNameField.clear();
+        quantityField.clear();
+        priceField.clear();
     }
 
     @FXML
     private void returnHashMap() {
-        System.out.println("Current Inventory: " + inventory);
+        System.out.println("Current Inventory:");
+        for (String key : inventory.keySet()) {
+            Item item = inventory.get(key);
+        
+        }
+        Auth.updateWholesalerInventory(user,inventory );
     }
+
+   
 }
 

@@ -29,7 +29,7 @@ public class Auth {
             
             Document userDoc = new Document("USERNAME", username)
                     .append("PASSWORD", password)
-                    .append("PINCODE", pincode);
+                    .append("PINCODE", pincode).append("PRIORITY",0);
             userDoc.append("BRANDNAME",brandOrInventory);
             userDoc.append("INFO", info);
            
@@ -54,22 +54,22 @@ public class Auth {
             else return false;
         }
     }
-        public static boolean updateWholesalerInventory(String username, HashMap<String, Integer> inventory) {
+       public static boolean updateWholesalerInventory(String username, HashMap<String, Item> inventory) {
         try (MongoClient mongoClient = MongoClients.create(DB_URI)) {
             MongoDatabase database = mongoClient.getDatabase(DB_NAME);
             MongoCollection<Document> collection = database.getCollection("WHOLESALER");
             
             Document updatedInventory = new Document();
             for (String key : inventory.keySet()) {
-                updatedInventory.append(key, inventory.get(key));
+                updatedInventory.append(key, inventory.get(key).toDocument());
             }
             
             Document updateQuery = new Document("$set", new Document("INVENTORY", updatedInventory));
             
             return collection.updateOne(new Document("USERNAME", username), updateQuery).getModifiedCount() > 0;
         }
-        }
-        public static HashMap<String, Integer> getWholesalerInventory(String username) {
+    }
+       public static HashMap<String, Item> getWholesalerInventory(String username) {
         try (MongoClient mongoClient = MongoClients.create(DB_URI)) {
             MongoDatabase database = mongoClient.getDatabase(DB_NAME);
             MongoCollection<Document> collection = database.getCollection("WHOLESALER");
@@ -80,9 +80,9 @@ public class Auth {
             }
             
             Document inventoryDoc = (Document) userDoc.get("INVENTORY");
-            HashMap<String, Integer> inventory = new HashMap<>();
+            HashMap<String, Item> inventory = new HashMap<>();
             for (String key : inventoryDoc.keySet()) {
-                inventory.put(key, inventoryDoc.getInteger(key));
+                inventory.put(key, Item.fromDocument((Document) inventoryDoc.get(key)));
             }
             
             return inventory;
