@@ -1,7 +1,42 @@
-/*
- * Empty Stylesheet file.
- */
 
-.mainFxmlClass {
-
+.user-card {
+    -fx-background-color: #EAECEE; /* Light grey background for user card */
+    -fx-padding: 15;
+    -fx-spacing: 30;
+    -fx-border-color: #7F8C8D;
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 10, 0, 5, 5); /* Enhanced drop shadow */
+    -fx-background-radius: 12; /* More rounded corners */
+    -fx-margin: 20 0 20 0; /* Space between cards */
+    -fx-transition: 0.3s ease; /* Smooth transition */
 }
+
+.user-card:hover {
+    -fx-background-color: #D5DBDB; /* Hover effect for interactivity */
+    -fx-cursor: hand;
+}
+
+/* Username Styling */
+.username {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50; /* Dark grey for better contrast */
+}
+
+/* Index Number and Balance Styling */
+.index-number {
+    -fx-font-size: 20px;
+    -fx-text-fill: #566573;
+    -fx-font-weight: bold;
+}
+
+
+/* Leaderboard Container Styling */
+#wholesalers {
+    -fx-background-color: transparent;
+    -fx-padding: 50; /* Keeps the content centered */
+    -fx-spacing: 20; /* More space between user cards */
+}
+
+
