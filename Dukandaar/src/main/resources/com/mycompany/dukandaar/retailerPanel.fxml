@@ -16,8 +16,8 @@
 
             <Button mnemonicParsing="false" onAction="#home" prefHeight="59.0" prefWidth="100.0" text="Home" />
          
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Chatbot" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Profile" />
+            <Button mnemonicParsing="false" onAction="#chatbot" prefHeight="59.0" prefWidth="100.0" text="Chatbot" />
+            <Button mnemonicParsing="false" onAction="#profile" prefHeight="59.0" prefWidth="100.0" text="Profile" />
             <Button mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Logout" />
          </children>
       </VBox>

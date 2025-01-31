@@ -40,7 +40,7 @@ public class logincontroller {
         {   FXMLLoader loader=new FXMLLoader(getClass().getResource("retailerPanel.fxml"));
         Parent root = loader.load();
        retailerpanelcontroller mpc=loader.getController();
-        mpc.setStage(stage);
+        mpc.setStage(stage,user);
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
