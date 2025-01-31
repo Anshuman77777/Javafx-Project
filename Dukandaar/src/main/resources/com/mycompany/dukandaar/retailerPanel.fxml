@@ -14,8 +14,10 @@
          <children>
             <Label fx:id="fullName" alignment="CENTER" prefHeight="59.0" prefWidth="100.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Full Name" textAlignment="CENTER" wrapText="true" />
             <Label fx:id="Balance" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="59.0" prefWidth="100.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text=" COINS:" textAlignment="CENTER" wrapText="true" />
+
             <Button mnemonicParsing="false" onAction="#home" prefHeight="59.0" prefWidth="100.0" text="Home" />
             <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Inventory" />
+         
             <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Chatbot" />
             <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="100.0" text="Profile" />
             <Button mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Logout" />
