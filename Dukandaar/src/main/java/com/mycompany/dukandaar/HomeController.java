@@ -5,9 +5,16 @@
 package com.mycompany.dukandaar;
 
 
+import java.awt.Canvas;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -21,12 +28,15 @@ public class HomeController  {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    BorderPane Canvas;
     Stage stage;
     @FXML
     private VBox wholesalers;
-    void setStage(Stage stage)
+    void setStage(Stage stage,BorderPane Canvas)
     {    
     show();
+    this.Canvas=Canvas;
         this.stage=stage;
     }  
     public void show(){
@@ -48,6 +58,23 @@ public class HomeController  {
         usernameLabel.getStyleClass().add("username");
         
         card.getChildren().addAll(indexLabel, usernameLabel);
+        card.setOnMouseClicked(event -> {
+            System.out.println(s);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("purchasepage.fxml"));
+        Parent root;
+            try {
+                root = loader.load();
+                PurchaseController mpc=loader.getController();
+                
+                //mpc.setStage(stage);
+                mpc.setWholesalerUsername(s);
+                Canvas.setCenter(root);
+            } catch (IOException ex) {
+                Logger.getLogger(PurchaseController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+    });
+        
         return card;
     }
     

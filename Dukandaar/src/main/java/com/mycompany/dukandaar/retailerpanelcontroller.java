@@ -55,7 +55,7 @@ public class retailerpanelcontroller {
         HomeController hpc = loader.getController();
         
         
-        hpc.setStage(stage);
+        hpc.setStage(stage,Canvas);
     // Assuming Canvas is a BorderPane (or another Pane type)
         Canvas.setCenter(root);
         Canvas.getStylesheets().add(getClass().getResource("home.css").toExternalForm());
