@@ -17,6 +17,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
 
 public class PurchaseController {
     @FXML
@@ -93,6 +94,10 @@ public class PurchaseController {
         } catch (NumberFormatException e) {
             System.out.println("Enter a valid number.");
         }
+    }
+
+    void setStage(Stage stage) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 
