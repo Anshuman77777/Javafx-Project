@@ -22,6 +22,7 @@ public class wholesalerpanelcontroller {
      Stage stage;
      @FXML
      Label fullName;
+     String user;
      
      @FXML
    BorderPane Canvas;
@@ -31,6 +32,7 @@ public class wholesalerpanelcontroller {
     {
         this.stage=stage;
         fullName.setText(Name);
+        user=Name;
         
     }
     @FXML
@@ -94,10 +96,9 @@ public class wholesalerpanelcontroller {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("winventory.fxml"));
     
      Parent root=loader.load();
-    // HomePageController hpc = loader.getController();
-   // hpc.Canvas=Canvas;
-    //hpc.email=Gmail;
-    //hpc.setStage(stage);
+    InventoryController hpc = loader.getController();
+    hpc.setUser(user);
+    hpc.initialize();
     // Assuming Canvas is a BorderPane (or another Pane type)
     Canvas.setCenter(root);
         
