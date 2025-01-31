@@ -23,9 +23,11 @@ public class PurchaseController {
     private VBox purchaseContainer;
     private String wholesalerUsername;
     private HashMap<String, Item> inventory;
+    String pin;
 
-    public void setWholesalerUsername(String username) {
+    public void setWholesalerUsername(String username,String pin) {
         this.wholesalerUsername = username;
+        this.pin=pin;
         loadInventory();
     }
 
