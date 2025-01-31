@@ -39,9 +39,52 @@ public class wholesalerpanelcontroller {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
     void analysis() throws IOException
     {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("wanalysis.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    @FXML
+    void chatbot() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("wchatbot.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    @FXML
+    void profile() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("wprofile.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    @FXML
+    void inventory() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("winventory.fxml"));
     
      Parent root=loader.load();
     // HomePageController hpc = loader.getController();

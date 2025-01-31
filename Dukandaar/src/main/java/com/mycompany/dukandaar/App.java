@@ -18,9 +18,9 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("wholesalerPanel.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("choosebetween.fxml"));
         Parent root = loader.load();
-       wholesalerpanelcontroller mpc=loader.getController();
+       choosebetweencontroller mpc=loader.getController();
        mpc.setStage(stage);
         Scene scene=new Scene(root);
         stage.setScene(scene);
