@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -22,13 +23,31 @@ import javafx.stage.Stage;
 public class retailerpanelcontroller {
     @FXML
     BorderPane Canvas;
+    @FXML
+    Label fullName;
     Stage stage;
-    void setStage(Stage stage)
+    void setStage(Stage stage,String Name)
     {
         this.stage=stage;
+        fullName.setText(Name);
         
     }
-    
+    @FXML
+    void profile()throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("wprofile.fxml"));
+        Parent root=loader.load();
+        Canvas.setCenter(root);
+    }
+    @FXML
+    void chatbot()throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("wchatbot.fxml"));
+        Parent root=loader.load();
+       
+        Canvas.setCenter(root);
+   
+    }
     @FXML
     void home()throws IOException
     {
