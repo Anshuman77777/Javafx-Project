@@ -16,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import java.util.HashMap;
-import com.mycompany.dukandaar.Item;
 
 public class InventoryController {
     @FXML
@@ -47,7 +46,8 @@ public class InventoryController {
 
     private HBox createItemRow(String key, Item item) {
         Label nameLabel = new Label(key);
-        Label valueLabel = new Label("Qty: " + item.getQuantity());
+        Label valueLabel = new Label("Qty:");
+        Label valueLabel2=new Label(" "+item.getQuantity());
         Label priceLabel = new Label("Price: $" + item.getPrice());
 
         Button plusButton = new Button("+");
@@ -72,7 +72,7 @@ public class InventoryController {
             updateDisplay();
         });
 
-        return new HBox(10, nameLabel, valueLabel, priceLabel, plusButton, minusButton, deleteButton);
+        return new HBox(10, nameLabel,valueLabel,plusButton,valueLabel2,  minusButton, priceLabel, deleteButton);
     }
 
     @FXML
