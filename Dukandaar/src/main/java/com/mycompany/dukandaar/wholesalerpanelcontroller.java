@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -20,10 +21,16 @@ import javafx.stage.Stage;
 public class wholesalerpanelcontroller {
      Stage stage;
      @FXML
+     Label fullName;
+     
+     @FXML
    BorderPane Canvas;
-    void setStage(Stage stage)
+     @FXML
+   
+    void setStage(Stage stage,String Name)
     {
         this.stage=stage;
+        fullName.setText(Name);
         
     }
     @FXML
