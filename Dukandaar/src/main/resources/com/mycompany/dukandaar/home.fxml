@@ -13,9 +13,12 @@
     </stylesheets>
    <children>
       <TextField alignment="CENTER" editable="false" layoutX="4.0" prefHeight="62.0" prefWidth="693.0" text="HOME">
-
+<font>
+            <Font name="System Bold" size="38.0" />
+         </font>
       </TextField>
-      <ScrollPane layoutY="49.0" prefHeight="551.0" prefWidth="700.0" />
-      <VBox layoutX="19.0" layoutY="51.0" prefHeight="524.0" prefWidth="660.0" />
+      <ScrollPane layoutX="4.0" layoutY="81.0" >
+      <VBox fx:id="wholesalers" prefHeight="519.0" prefWidth="693.0"  />
+  </ScrollPane>
    </children>
 </AnchorPane>
