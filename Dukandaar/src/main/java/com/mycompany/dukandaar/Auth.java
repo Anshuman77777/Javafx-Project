@@ -9,7 +9,9 @@ package com.mycompany.dukandaar;
  * @author Anshu
  */
 import com.mongodb.client.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import org.bson.Document;
 
 
@@ -88,9 +90,29 @@ public class Auth {
             return inventory;
         }
     }
+public static List<String> getTopWholesalers() {
+        List<String> topWholesalers = new ArrayList<>();
+        
+        try (MongoClient mongoClient = MongoClients.create(DB_URI)) {
+            MongoDatabase database = mongoClient.getDatabase(DB_NAME);
+            MongoCollection<Document> collection = database.getCollection("WHOLESALER");
+
+            FindIterable<Document> result = collection.find()
+                    .sort(new Document("PRIORITY", -1)) // Sort by PRIORITY in descending order
+                    .limit(5); // Limit to top 5
+
+            for (Document doc : result) {
+                topWholesalers.add(doc.getString("USERNAME"));
+            }
+        }
+
+        return topWholesalers;
+    }
+
+    
         
     public static void main(String Args[])
     {
-       System.out.println(getWholesalerInventory("A"));
+       System.out.println(getTopWholesalers());
     }
 }
