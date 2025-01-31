@@ -6,7 +6,6 @@ package com.mycompany.dukandaar;
 
 
 
-import java.awt.Canvas;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
