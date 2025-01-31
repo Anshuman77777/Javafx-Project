@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dukandaar.InventoryController">
+   <children>
+      <TextField alignment="CENTER" editable="false" layoutX="4.0" prefHeight="62.0" prefWidth="693.0" text="INVENTORY" />
+      <ScrollPane layoutX="4.0" layoutY="81.0" prefHeight="470.0" prefWidth="693.0">
+         <content>
+            <VBox fx:id="stocksContainer" prefWidth="693.0" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="270.0" layoutY="560.0" onAction="#returnHashMap" prefWidth="160.0" text="Return HashMap" />
+   </children>
+</AnchorPane>
