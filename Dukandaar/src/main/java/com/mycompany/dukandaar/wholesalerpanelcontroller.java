@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -17,11 +19,15 @@ import javafx.stage.Stage;
  */
 public class wholesalerpanelcontroller {
      Stage stage;
+     @FXML
+   BorderPane Canvas;
     void setStage(Stage stage)
     {
         this.stage=stage;
         
     }
+    @FXML
+    Button analysis,profile,inventory,chatbot;
      @FXML
     void logout() throws IOException
     {
@@ -33,4 +39,18 @@ public class wholesalerpanelcontroller {
         stage.setScene(scene);
         stage.show();
     }
+    void analysis() throws IOException
+    {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+    
+     Parent root=loader.load();
+    // HomePageController hpc = loader.getController();
+   // hpc.Canvas=Canvas;
+    //hpc.email=Gmail;
+    //hpc.setStage(stage);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+    }
+    
 }

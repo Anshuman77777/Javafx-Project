@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -18,6 +20,11 @@ import javafx.stage.Stage;
 public class logincontroller {
     Stage stage;
     int role=0;
+    @FXML
+    private TextField username;
+    
+    @FXML
+    private PasswordField passwordField;
     void setStage(Stage stage,int role)
     {
         this.stage=stage;
@@ -25,8 +32,10 @@ public class logincontroller {
     }
     @FXML
     void next() throws IOException
-    {
-        
+    {String user=username.getText();
+    String pass=passwordField.getText();
+       if(Auth.login(user, pass, role))
+       {
         if(role==0)
         {   FXMLLoader loader=new FXMLLoader(getClass().getResource("retailerPanel.fxml"));
         Parent root = loader.load();
@@ -48,6 +57,12 @@ public class logincontroller {
         stage.show();
             
         }
+       }
+       else {System.out.println("Wrong Credentials");
+       System.out.println(user);
+       System.out.println(pass);
+       System.out.println(role);
+       }
     }
     @FXML
     void signup() throws IOException

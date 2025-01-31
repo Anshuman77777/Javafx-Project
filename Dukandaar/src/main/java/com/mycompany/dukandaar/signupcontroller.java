@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -18,6 +20,19 @@ import javafx.stage.Stage;
 public class signupcontroller {
     Stage stage;
     int role=0;
+    @FXML
+     TextField emailField;
+    @FXML
+    TextField pin;
+    @FXML
+     PasswordField passwordField;
+    @FXML
+    TextField Brand;
+    @FXML
+    TextField Info;
+    
+    @FXML
+    private PasswordField confirmPasswordField;
     //0->retailer 1->wholesaler
     void setStage(Stage stage,int role)
     {
@@ -27,7 +42,22 @@ public class signupcontroller {
     @FXML
     void next() throws IOException
     {
+        String email=emailField.getText();
+        String pass=passwordField.getText();
+        String cpass=confirmPasswordField.getText();
+        String brand=Brand.getText();
+        String info=Info.getText();
+        String p=pin.getText();
+        System.out.println(email);
+        System.out.println(pass);
+        System.out.println(cpass);
+        System.out.println(brand);
+        System.out.println(info);
+        System.out.println(p);
         
+        if(!(pass.equals(cpass)))return ;
+        if(Auth.signup(email, pass, role, brand, p, info));
+        {
         if(role==0)
         {   FXMLLoader loader=new FXMLLoader(getClass().getResource("retailerPanel.fxml"));
         Parent root = loader.load();
@@ -48,6 +78,7 @@ public class signupcontroller {
         stage.setScene(scene);
         stage.show();
             
+        }
         }
     }
     @FXML

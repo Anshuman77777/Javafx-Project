@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <TextField alignment="CENTER" editable="false" layoutX="4.0" prefHeight="62.0" prefWidth="693.0" text="BUY OR SELL ">
+      </TextField>
+      <ScrollPane layoutX="4.0" layoutY="81.0">
+         <content>
+            <VBox fx:id="stockscontainer" prefHeight="519.0" prefWidth="693.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
