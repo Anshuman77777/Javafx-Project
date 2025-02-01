@@ -27,7 +27,7 @@ public class InventoryController {
     void setUser(String user)
     {this.user=user;
     inventory=Auth.getWholesalerInventory(user);
-      updateDisplay();
+     if(inventory!=null) updateDisplay();
         
     }
     public void initialize() {

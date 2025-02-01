@@ -77,7 +77,7 @@ public class signupcontroller {
        wholesalerpanelcontroller mpc=loader.getController();
       
         mpc.setStage(stage,email);
-         mpc.inventory();
+        mpc.inventory();
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();

@@ -7,30 +7,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@Mainpanel.css" 
-            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.mycompany.dukandaar.retailerpanelcontroller">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@Mainpanel.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dukandaar.retailerpanelcontroller">
    <children>
       <!-- Dark Sidebar Pane -->
-      <Pane prefHeight="600.0" prefWidth="100.0" styleClass="sidebar" 
-            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane prefHeight="600.0" prefWidth="100.0" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       
       <VBox prefHeight="600.0" prefWidth="138.0" styleClass="sidebar">
          <children>
-            <Label fx:id="fullName" alignment="CENTER" prefHeight="59.0" prefWidth="100.0" 
-                   text="Full Name" textAlignment="CENTER" wrapText="true" styleClass="orange-text bold-text" />
+            <Label fx:id="fullName" alignment="CENTER" prefHeight="59.0" prefWidth="100.0" styleClass="orange-text bold-text" text="Full Name" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Label fx:id="fullName1" alignment="CENTER" prefHeight="59.0" prefWidth="100.0" styleClass="orange-text bold-text" text="Retailer" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
 
-            <Button mnemonicParsing="false" onAction="#home" prefHeight="59.0" prefWidth="100.0" 
-                    text="Home" styleClass="sidebar-button" />
+            <Button mnemonicParsing="false" onAction="#home" prefHeight="59.0" prefWidth="100.0" styleClass="sidebar-button" text="Home" />
          
-            <Button mnemonicParsing="false" onAction="#chatbot" prefHeight="59.0" prefWidth="100.0" 
-                    text="Chatbot" styleClass="sidebar-button" />
+            <Button mnemonicParsing="false" onAction="#chatbot" prefHeight="59.0" prefWidth="100.0" styleClass="sidebar-button" text="Chatbot" />
             
-            <Button mnemonicParsing="false" onAction="#profile" prefHeight="59.0" prefWidth="100.0" 
-                    text="Profile" styleClass="sidebar-button" />
+            <Button mnemonicParsing="false" onAction="#profile" prefHeight="59.0" prefWidth="100.0" styleClass="sidebar-button" text="Profile" />
             
-            <Button mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="100.0" 
-                    text="Logout" styleClass="sidebar-button bold-text" />
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="100.0" styleClass="sidebar-button bold-text" text="Logout" />
          </children>
       </VBox>
 
@@ -38,4 +31,3 @@
       <BorderPane fx:id="Canvas" layoutX="101.0" prefHeight="600.0" prefWidth="700.0" styleClass="main-content" />
    </children>
 </AnchorPane>
-
