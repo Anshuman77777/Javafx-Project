@@ -73,7 +73,7 @@ public class PurchaseController {
         Label stockLabel = new Label("Stock: " + item.getQuantity());
         stockLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #555;");
 
-        Label priceLabel = new Label("Price: $" + item.getPrice());
+        Label priceLabel = new Label("Price: ₹" + item.getPrice());
         priceLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #28a745;");
 
         TextField quantityField = new TextField();

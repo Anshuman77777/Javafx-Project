@@ -48,7 +48,7 @@ public class InventoryController {
         Label nameLabel = new Label(key);
         Label valueLabel = new Label("Qty:");
         Label valueLabel2=new Label(" "+item.getQuantity());
-        Label priceLabel = new Label("Price: $" + item.getPrice());
+        Label priceLabel = new Label("Price: ₹" + item.getPrice());
 
         Button plusButton = new Button("+");
         plusButton.setOnAction(e -> {

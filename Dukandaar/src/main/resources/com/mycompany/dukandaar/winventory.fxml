@@ -23,6 +23,6 @@
       <Button layoutX="400.0" layoutY="500.0" onAction="#insertItem" text="Insert" />
 
       <!-- Return HashMap Button -->
-      <Button layoutX="270.0" layoutY="570.0" onAction="#returnHashMap" prefWidth="160.0" text="Return HashMap" />
+      <Button layoutX="270.0" layoutY="570.0" onAction="#returnHashMap" prefWidth="160.0" text="Save" />
    </children>
 </AnchorPane>

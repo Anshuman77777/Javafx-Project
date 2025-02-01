@@ -1,17 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dukandaar.choosebetweencontroller">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dukandaar.choosebetweencontroller">
    <children>
-      <HBox prefHeight="600.0" prefWidth="800.0">
+      <ImageView fitHeight="714.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@2.jpg" />
+         </image>
+      </ImageView>
+      <HBox layoutX="129.0" layoutY="470.0" prefHeight="23.0" prefWidth="570.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#next" prefHeight="600.0" prefWidth="400.0" text="Retailer" />
-            <Button mnemonicParsing="false" onAction="#next2" prefHeight="600.0" prefWidth="400.0" text="Wholesaler" />
+            <Button mnemonicParsing="false" onAction="#next" prefHeight="46.0" prefWidth="271.0" text="Retailer" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#next2" prefHeight="47.0" prefWidth="269.0" text="Wholesaler" />
          </children>
       </HBox>
+      <Label layoutX="288.0" layoutY="57.0" prefHeight="59.0" prefWidth="251.0" text="WELCOME" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="53.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="178.0" layoutY="116.0" text="BUY BIG OR SELL SMART- YOUR BUSINESS YOUR WAY" textFill="#ffa600">
+         <font>
+            <Font name="Century Gothic" size="20.0" />
+         </font>
+      </Label>
    </children>
     
 </AnchorPane>

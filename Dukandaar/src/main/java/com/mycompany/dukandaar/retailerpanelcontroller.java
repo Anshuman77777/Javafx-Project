@@ -31,6 +31,17 @@ public class retailerpanelcontroller {
         fullName.setText(Name);
         
     }
+    void starting()throws IOException{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+        Parent root=loader.load();
+        HomeController hpc = loader.getController();
+        
+        
+        hpc.setStage(stage,Canvas);
+    // Assuming Canvas is a BorderPane (or another Pane type)
+        Canvas.setCenter(root);
+        Canvas.getStylesheets().add(getClass().getResource("home.css").toExternalForm());    
+     }
     @FXML
     void profile()throws IOException
     {
