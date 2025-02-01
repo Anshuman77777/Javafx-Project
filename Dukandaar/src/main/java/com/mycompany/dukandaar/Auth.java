@@ -12,6 +12,7 @@ import com.mongodb.client.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javafx.stage.Stage;
 import org.bson.Document;
 
 
@@ -110,6 +111,10 @@ public static List<String> getTopWholesalers() {
     }
 
     
+
+    void setStage(Stage stage) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
         
     public static void main(String Args[])
     {
