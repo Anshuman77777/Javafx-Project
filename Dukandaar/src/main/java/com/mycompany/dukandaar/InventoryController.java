@@ -33,7 +33,7 @@ public class InventoryController {
     {this.user=user;
     inventory=Auth.getWholesalerInventory(user);
      if(inventory!=null) updateDisplay();
-        
+     else inventory=new HashMap();
     }
     public void initialize() {
         // Sample items

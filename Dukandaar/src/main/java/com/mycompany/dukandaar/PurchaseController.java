@@ -36,7 +36,6 @@ public class PurchaseController {
 
     public void setWholesalerUsername(String username, String pin) {
         this.wholesalerUsername = username;
-        this.pin = pin;
         loadInventory();
         connectToMongoDB();
     }
@@ -49,6 +48,8 @@ public class PurchaseController {
     }
 
     private void loadInventory() {
+                pin=Auth.getPin(wholesalerUsername);
+
         inventory = Auth.getWholesalerInventory(wholesalerUsername);
         if (inventory == null) {
             System.out.println("No inventory found.");

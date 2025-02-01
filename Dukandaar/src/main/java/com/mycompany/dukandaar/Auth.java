@@ -111,6 +111,24 @@ public static List<String> getTopWholesalers() {
     }
 
     
+static String getPin(String Username)
+{
+    try (MongoClient mongoClient = MongoClients.create(DB_URI)) {
+        MongoDatabase database = mongoClient.getDatabase(DB_NAME);
+        MongoCollection<Document> collection = database.getCollection("WHOLESALER");
+
+        Document userDoc = collection.find(new Document("USERNAME", Username)).first();
+        if (userDoc == null || !userDoc.containsKey("PINCODE")) {
+            return "-1"; // User not found or no pin code
+        }
+
+        // Retrieve the pin code as a String (since it is stored as a String in the database)
+        String pinCode = userDoc.getString("PINCODE");
+
+        return pinCode != null ? pinCode : "-1"; // Return the pin code or "-1" if it's null
+    }
+}
+
 
     void setStage(Stage stage) {
         throw new UnsupportedOperationException("Not supported yet.");
