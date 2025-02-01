@@ -22,6 +22,7 @@ public class App extends Application {
         Parent root = loader.load();
        choosebetweencontroller mpc=loader.getController();
        mpc.setStage(stage);
+       
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
