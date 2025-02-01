@@ -67,7 +67,7 @@ public class HomeController  {
                 PurchaseController mpc=loader.getController();
                 
                 //mpc.setStage(stage);
-                mpc.setWholesalerUsername(s);
+                mpc.setWholesalerUsername(s,"0");
                 Canvas.setCenter(root);
             } catch (IOException ex) {
                 Logger.getLogger(PurchaseController.class.getName()).log(Level.SEVERE, null, ex);
