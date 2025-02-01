@@ -16,12 +16,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import java.util.HashMap;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 
 public class InventoryController {
     @FXML
     private VBox stocksContainer;
     @FXML
+    
     private TextField itemNameField, quantityField, priceField;
+    @FXML
+     Button insertb,submit;
     String user;
     private  HashMap<String, Item> inventory;
     void setUser(String user)
@@ -45,6 +50,7 @@ public class InventoryController {
     }
 
     private HBox createItemRow(String key, Item item) {
+        
         Label nameLabel = new Label(key);
         Label valueLabel = new Label("Qty:");
         Label valueLabel2=new Label(" "+item.getQuantity());
@@ -71,8 +77,17 @@ public class InventoryController {
             inventory.remove(key);
             updateDisplay();
         });
-
-        return new HBox(10, nameLabel,valueLabel,plusButton,valueLabel2,  minusButton, priceLabel, deleteButton);
+        deleteButton.setStyle("-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;");
+        plusButton.setStyle("-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;");
+        minusButton.setStyle("-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;");
+        insertb.setStyle("-fx-background-color: ##00ff84; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;");
+        submit.setStyle("-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;");
+        deleteButton.setStyle("-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;");
+        HBox row = new HBox(10, nameLabel,valueLabel,plusButton,valueLabel2,  minusButton, priceLabel, deleteButton);
+       row.setAlignment(Pos.CENTER);
+        row.setPadding(new Insets(5, 10, 5, 10));
+        row.setStyle("-fx-background-color: #f4f4f4; -fx-background-radius: 10; -fx-border-color: #ddd; -fx-border-radius: 10;");
+        return row;
     }
 
     @FXML

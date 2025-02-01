@@ -63,7 +63,7 @@ public class PurchaseController {
 
     private HBox createPurchaseRow(String itemName, Item item) {
         HBox row = new HBox(15);
-        row.setAlignment(Pos.CENTER_LEFT);
+        row.setAlignment(Pos.CENTER);
         row.setPadding(new Insets(5, 10, 5, 10));
         row.setStyle("-fx-background-color: #f4f4f4; -fx-background-radius: 10; -fx-border-color: #ddd; -fx-border-radius: 10;");
 
