@@ -12,13 +12,13 @@
         <URL value="@home.css" />
     </stylesheets>
    <children>
-      <TextField alignment="CENTER" editable="false" layoutX="4.0" prefHeight="62.0" prefWidth="693.0" text="HOME">
+      <TextField alignment="CENTER" editable="false" layoutX="4.0" prefHeight="62.0" prefWidth="693.0" text="Wholesalers in your area">
 <font>
-            <Font name="System Bold" size="38.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </TextField>
-      <ScrollPane layoutX="4.0" layoutY="81.0" >
-      <VBox fx:id="wholesalers" prefHeight="519.0" prefWidth="693.0"  />
+      <ScrollPane layoutX="4.0" layoutY="81.0">
+      <VBox fx:id="wholesalers" prefHeight="519.0" prefWidth="693.0" />
   </ScrollPane>
    </children>
 </AnchorPane>
