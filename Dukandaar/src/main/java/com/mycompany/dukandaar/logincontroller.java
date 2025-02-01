@@ -40,7 +40,9 @@ public class logincontroller {
         {   FXMLLoader loader=new FXMLLoader(getClass().getResource("retailerPanel.fxml"));
         Parent root = loader.load();
        retailerpanelcontroller mpc=loader.getController();
+       
         mpc.setStage(stage,user);
+        mpc.home();
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -52,6 +54,8 @@ public class logincontroller {
         Parent root = loader.load();
        wholesalerpanelcontroller mpc=loader.getController();
         mpc.setStage(stage,user);
+               mpc.inventory();
+
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();

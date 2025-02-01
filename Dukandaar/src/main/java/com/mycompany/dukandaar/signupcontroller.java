@@ -63,6 +63,8 @@ public class signupcontroller {
         Parent root = loader.load();
        retailerpanelcontroller mpc=loader.getController();
         mpc.setStage(stage,email);
+               mpc.home();
+
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -73,7 +75,9 @@ public class signupcontroller {
             FXMLLoader loader=new FXMLLoader(getClass().getResource("wholesalerPanel.fxml"));
         Parent root = loader.load();
        wholesalerpanelcontroller mpc=loader.getController();
+      
         mpc.setStage(stage,email);
+         mpc.inventory();
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -88,6 +92,7 @@ public class signupcontroller {
         Parent root = loader.load();
        logincontroller mpc=loader.getController();
         mpc.setStage(stage,role);
+        
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
